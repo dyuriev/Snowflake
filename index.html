@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SnowFlake editor v0.1</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <!--<link rel="stylesheet" type="text/css" href="css/bootstrap-colorpicker.min.css" /> -->
+    <link rel="stylesheet" type="text/css" href="http://mjolnic.com/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css" />
+
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/colorpicker-color.js"></script>
+    <script type="text/javascript" src="js/colorpicker.js"></script>
+
+    <!--<script type="text/javascript" src="js/scripts.js"></script>-->
+    <!--<script type="text/javascript" src="2.js"></script>-->
+
+    <style>
+        canvas {
+            border: 2px dotted #7B899B;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+
+                    <a style="float: left; padding: 10px;" href="#">
+                        <img alt="Brand" src="img/jseditor.logo.jpg" style="height: 35px;">
+                    </a>
+
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Snowflake v0.1</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-lg-1 col-md-1 col-xs-1">
+            <div class="btn-group-vertical">
+                <button type="button" class="btn btn-default btn-draw-mode" title="Draw line" data-mode="line"><img src="img/line.gif" /></button>
+                <button type="button" class="btn btn-default btn-draw-mode" title="Draw circle" data-mode="circle"><strong><i class="fa fa-circle-o"></i></strong></button>
+                <button type="button" class="btn btn-default btn-draw-mode" title="Draw rectangle" data-mode="rectangle"><img src="img/rectangle.gif" /></button>
+                <br /><br />
+                <button type="button" class="btn btn-default btn-select-mode" title="Select and move mode"><i class="fa fa-arrows"></i></button>
+                <button type="button" class="btn btn-default btn-clear-all" title="Clear all"><img src="img/delete.gif" /></button>
+            </div>
+
+            <input type="text" value="" class="form-control demo1" />
+            <span class="input-group-addon"><i></i></span>
+        </div>
+        <div class="col-lg-11 col-md-11 col-xs-11">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-xs-12">
+                    <div class="well well-lg well-sm" style="width: 1030px;">
+                        <canvas id="canvas" height="500" width="1000"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-xs-3">
+                    <button class="btn btn-success btn-lg btn-save"><i class="fa fa-save"></i> Save to JSON</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button class="btn btn-primary btn-lg btn-load"><i class="fa fa-lock"></i> Load from JSON</button>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="well" style="width: 1030px;">
+                    <textarea name="shapes" id="shapes" style="width: 1000px; height: 200px;"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/snowflake/app.js"></script>
+<script type="text/javascript" src="js/snowflake/libs/Helpers.js"></script>
+<script type="text/javascript" src="js/snowflake/libs/Canvas.js?id=10"></script>
+<script type="text/javascript" src="js/snowflake/shapes/AbstractShape.js"></script>
+<script type="text/javascript" src="js/snowflake/shapes/Line.js"></script>
+<script type="text/javascript" src="js/snowflake/shapes/Circle.js"></script>
+<script type="text/javascript" src="js/snowflake/shapes/Rectangle.js"></script>
+<script type="text/javascript" src="js/snowflake/libs/Controller.js"></script>
+<!--<script type="text/javascript" src="js/my.js"></script>-->
+<script type="text/javascript" src="js/snowflake/run.js"></script>
+<script>
+    $(function(){
+        $('.demo1').colorpicker();
+    });
+</script>
+</body>
+</html>
